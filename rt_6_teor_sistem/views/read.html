@@ -1,0 +1,21 @@
+<!-- Вывод данных о животных с помощью конструкции {{ .ИМЯ }} -->
+<div class="wrapper">
+    <p class="caption">Список всех табуреток</p>
+
+    {{ range .Data }}
+
+    <div class="item">
+        <p><b>Название:</b> <a href="/stools/{{ .Id }}">{{ .Name }}</a></p>
+        <p><b>Тип дерева:</b> {{ .Type }}</p>
+        <p><b>Высота:</b> {{ .Higt }}</p>
+        <p><b>Цена:</b> {{ .Price }}</p>
+
+
+        <div class="buttons">
+            <a href="/stool/update/{{ .Id }}" class="button">Редактировать</a>
+            <a href="/stool/delete/{{ .Id }}" class="button red">Удалить</a>
+        </div>
+    </div>
+
+    {{ end }}
+</div>
